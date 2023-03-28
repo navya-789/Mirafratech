@@ -1,37 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
 #define MAX 10
-int bineary_search(int arr[],int key)
+int binarySearch(int arr[], int l, int r, int x)
 {
-	int i;
-	if(arr[MAX]==0)
-		return 0;
-	else
+	while (l <= r)
 	{
-	for(i=0;i<MAX;i++)
-	{
-		if(arr[i]==key)
-			return i;
-
+		int m = l + (r-l)/2;
+		if (arr[m] == x)
+			return m;
+		else if (arr[m] < x)
+			l = m + 1;
+		else
+			r = m - 1;
 	}
-	}
-		return 0;
-
+	return -1;
 }
-int main()
+int main(void)
 {
-	int arr[MAX];
-//	int arr[MAX]={10,12,34,18,14,56,78,43,12,90};
-	int key=18;
-	int p=bineary_search(arr,key);
-	if(p)
-	{
-		printf("%d is found at arr[%d]\n",key,p+1);
-	}
-	else if(MAX==0)
-	{ 
-
-		printf("array is empty\n");
-	}
-	else
-		printf("%d is not found\n",key);
+	int arr[] = {2, 3, 4, 10, 40,90,70,60,30};
+//	printf("size of array=%ld\n",sizeof(arr));
+//	int n = sizeof(arr)/ sizeof(arr[0]);
+	int x = 30;
+	int result = binarySearch(arr, 0, MAX, x);
+	(result == -1)? printf("Element is not present in array\n")
+		: printf("Element is present at index %d\n", result);
+	return 0;
 }
+
