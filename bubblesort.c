@@ -1,5 +1,12 @@
 #include<stdio.h>
 #define MAX 5
+void swap(int *arr,int *arr1)
+{
+			int t;
+				t=*arr;
+				*arr=*arr1;
+				*arr1=t;
+}
 void bubblesort(int arr[])
 {
 	int i,j,t;
@@ -19,14 +26,12 @@ void bubblesort(int arr[])
 			//printf("\n");
 			if(arr[j]>arr[j+1])
 			{
-				t=arr[j];
-				arr[j]=arr[j+1];
-				arr[j+1]=t;
-			//	printf("j=%d\t",j);
-			//	printf("arr[%d]=%d\t",j,arr[j]);
+				swap(&arr[j],&arr[j+1]);
+				//	printf("j=%d\t",j);
+				//	printf("arr[%d]=%d\t",j,arr[j]);
 			}
-		//	printf("\ni=%d\t",i);
-		//	printf("arr[%d]=%d\t",i,arr[i]);
+			//	printf("\ni=%d\t",i);
+			//	printf("arr[%d]=%d\t",i,arr[i]);
 		}
 	}
 	printf("\n");
@@ -39,6 +44,6 @@ int main()
 	int arr[MAX];
 	printf("enter an array of size -%d",MAX);
 	for(int i=0;i<MAX;i++)
-	scanf("%d",&arr[i]);
+		scanf("%d",&arr[i]);
 	bubblesort(arr);
 }
