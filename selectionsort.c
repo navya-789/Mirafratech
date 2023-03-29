@@ -6,7 +6,6 @@ void swap(int *xp, int *yp)
 	*xp = *yp;
 	*yp = temp;
 }
-
 void selectionSort(int arr[], int n)
 {
 	int i, j, k;
@@ -34,6 +33,5 @@ int main()
 	for (i=0; i < MAX; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
-
 	return 0;
 }

@@ -10,7 +10,7 @@ void insertionSort(int arr[], int n)
 		{
 			arr[j + 1] = arr[j];
 		}
-		arr[j + 1] = t;
+		arr[j+1] = t;
 	}
 	for(i=0;i<n;i++)
 		printf("%d\t",arr[i]);

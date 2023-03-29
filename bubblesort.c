@@ -9,7 +9,7 @@ void swap(int *arr,int *arr1)
 }
 void bubblesort(int arr[])
 {
-	int i,j,t;
+	int i,j,t,flag=0,p=0,c=0;
 	printf("the array is\n");
 	for(i=0;i<MAX;i++)
 	{
@@ -18,26 +18,26 @@ void bubblesort(int arr[])
 	printf("\n");
 	for(i=0;i<MAX;i++)
 	{
-		//printf("i=arr[%d]=%d\t",i,arr[i]);
-		//printf("\n");
+		c++;
 		for(j=0;j<=(MAX)-(i+1);j++)
 		{
-			//printf("j=arr[%d]=%d\n",j,arr[j]);
-			//printf("\n");
+			
 			if(arr[j]>arr[j+1])
 			{
-				swap(&arr[j],&arr[j+1]);
-				//	printf("j=%d\t",j);
-				//	printf("arr[%d]=%d\t",j,arr[j]);
+			swap(&arr[j],&arr[j+1]);
+		flag=0;
 			}
-			//	printf("\ni=%d\t",i);
-			//	printf("arr[%d]=%d\t",i,arr[i]);
+			p++;
 		}
+		if(flag==0)
+			break;
 	}
 	printf("\n");
 	for(i=0;i<MAX;i++)
 		printf("%d\t",arr[i]);
 	printf("\n");
+	printf("i=%d\t",c);
+	printf("j=%d\n",p);
 }
 int main()
 {
