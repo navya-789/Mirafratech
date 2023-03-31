@@ -1,9 +1,7 @@
 #include<stdio.h>
 #include<string.h>
-
 int string(char s[],char sub[]);
 int substring(char sub[]); 
-
 int main()
 {
 	int a,b;
@@ -14,13 +12,12 @@ int main()
 	printf("%d\n",a-b);
 
 }
-int substring(char sub[])
+/*int substring(char sub[])
 {
 	int i;
 	for(i=0;sub[i]!='\0';i++);
 	return i;
-}
-
+}*/
 int string(char s[] ,char sub[])
 {
 	int j,i;
@@ -36,8 +33,5 @@ int string(char s[] ,char sub[])
 		}
 		if(sub[i]==0)
 			return j+1;
-
 	}
 }
-	
-
