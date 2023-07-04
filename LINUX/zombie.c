@@ -17,6 +17,10 @@ int main(void)
 	} 
 	else if (pid > 0) 
 	{
+		int status;
+		getchar();
+		wait(&status);
+		getchar();
 		printf("I am a parent process\n");
 		printf("Parent process ID: %d\n", getpid());
 		printf("Parent process exiting\n");
